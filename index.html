@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="COMAL — Pupusería contemporánea en San Salvador. Masa nixtamalizada, leña, ingredientes locales. Reserva tu mesa." />
+  <meta name="author" content="Equipo COMAL" />
+  <meta name="theme-color" content="#1a1612" />
+  <title>COMAL — Pupusería Contemporánea · San Salvador</title>
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..900;1,9..144,200..900&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Favicon embebido -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23f5ede0'/%3E%3Ccircle cx='50' cy='55' r='32' fill='%231a1612'/%3E%3Ccircle cx='50' cy='52' r='18' fill='%23c4451c'/%3E%3C/svg%3E" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Barra de progreso de scroll -->
+  <div class="scroll-bar" id="scrollBar"></div>
+
+  <!-- =========================================
+       NAVBAR (Sección 2)
+       ========================================= -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">
+      <svg class="logo-mark" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="16" cy="16" r="7" fill="currentColor"/>
+      </svg>
+      <span>COMAL</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#menu">Menú</a>
+      <a href="#reservar">Reservar</a>
+    </div>
+
+    <div class="nav-status" id="navStatus">
+      <span class="status-dot"></span>
+      <span id="openStatus">Cargando…</span>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Menú móvil overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#hero" data-num="01">Inicio</a>
+    <a href="#nosotros" data-num="02">Nosotros</a>
+    <a href="#menu" data-num="03">Menú</a>
+    <a href="#reservar" data-num="04">Reservar</a>
+    <div class="mobile-info">
+      <p>Abierto Mar – Dom · 12:00 — 22:00</p>
+      <p>Col. Escalón, San Salvador</p>
+      <p>+503 2222-3344</p>
+    </div>
+  </div>
+
+  <!-- =========================================
+       HERO (Sección 1)
+       ========================================= -->
+  <section class="hero" id="hero">
+    <div class="hero-grain"></div>
+
+    <div class="hero-meta">
+      <span class="meta-tag">Desde 2014</span>
+      <span class="meta-sep">·</span>
+      <span>San Salvador, El Salvador</span>
+      <span class="meta-sep">·</span>
+      <span>13.7°N — 89.2°W</span>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>
+          Pupusas<br>
+          de <em>leña</em><br>
+          &amp; historia.
+        </h1>
+        <p class="hero-sub">
+          Llevamos diez años cocinando con masa nixtamalizada en casa, comal de barro y leña de café. No reinventamos la pupusa — la tratamos con el respeto que se merece.
+        </p>
+        <div class="cta-group">
+          <a href="#reservar" class="btn btn-primary" data-magnetic>
+            <span>Reservar mesa</span>
+            <span class="arrow">→</span>
+          </a>
+          <a href="#menu" class="btn btn-ghost" data-magnetic>
+            Ver el menú
+          </a>
+        </div>
+      </div>
+
+      <!-- Ilustración SVG del comal -->
+      <div class="hero-art">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <!-- Vapor -->
+          <g class="steam">
+            <path class="s s1" d="M180 120 Q175 100 185 80 Q195 60 180 40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path class="s s2" d="M240 130 Q235 110 245 90 Q255 70 240 50" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path class="s s3" d="M300 120 Q295 100 305 80 Q315 60 300 40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </g>
+
+          <!-- Comal grande -->
+          <ellipse cx="250" cy="320" rx="220" ry="40" fill="#1a1612" opacity="0.15"/>
+          <ellipse cx="250" cy="300" rx="200" ry="60" fill="#3d2a1f"/>
+          <ellipse cx="250" cy="290" rx="200" ry="55" fill="#1a1612"/>
+          <ellipse cx="250" cy="285" rx="180" ry="48" fill="#2a1f17"/>
+
+          <!-- Pupusa central -->
+          <ellipse cx="250" cy="270" rx="85" ry="22" fill="#1a1612" opacity="0.4"/>
+          <ellipse cx="250" cy="260" rx="85" ry="22" fill="#d4a017"/>
+          <ellipse cx="250" cy="258" rx="80" ry="19" fill="#e8b937"/>
+          <!-- Marcas tostadas -->
+          <ellipse cx="220" cy="255" rx="8" ry="3" fill="#8b6914" opacity="0.6"/>
+          <ellipse cx="270" cy="262" rx="10" ry="3" fill="#8b6914" opacity="0.5"/>
+          <ellipse cx="245" cy="252" rx="6" ry="2" fill="#8b6914" opacity="0.7"/>
+
+          <!-- Pupusa izquierda -->
+          <ellipse cx="130" cy="290" rx="60" ry="16" fill="#1a1612" opacity="0.4"/>
+          <ellipse cx="130" cy="282" rx="60" ry="16" fill="#c4a77d"/>
+          <ellipse cx="130" cy="280" rx="56" ry="14" fill="#d4b88d"/>
+          <ellipse cx="115" cy="278" rx="6" ry="2" fill="#8b6914" opacity="0.5"/>
+
+          <!-- Pupusa derecha -->
+          <ellipse cx="370" cy="295" rx="55" ry="15" fill="#1a1612" opacity="0.4"/>
+          <ellipse cx="370" cy="288" rx="55" ry="15" fill="#9caf6d"/>
+          <ellipse cx="370" cy="286" rx="51" ry="13" fill="#aac085"/>
+          <!-- Trocito de loroco -->
+          <circle cx="380" cy="284" r="2" fill="#2d4a1f"/>
+          <circle cx="365" cy="283" r="1.5" fill="#2d4a1f"/>
+
+          <!-- Brasas debajo del comal -->
+          <g class="embers">
+            <circle class="ember e1" cx="180" cy="380" r="4" fill="#c4451c"/>
+            <circle class="ember e2" cx="230" cy="395" r="5" fill="#d4631c"/>
+            <circle class="ember e3" cx="290" cy="385" r="4" fill="#c4451c"/>
+            <circle class="ember e4" cx="340" cy="400" r="3" fill="#a0381a"/>
+            <circle class="ember e5" cx="200" cy="410" r="3" fill="#d4631c"/>
+            <circle class="ember e6" cx="270" cy="420" r="4" fill="#c4451c"/>
+          </g>
+
+          <!-- Hojas decorativas (banano) -->
+          <path d="M50 200 Q70 180 90 195 Q85 215 70 220 Q55 215 50 200" fill="#2d4a1f" opacity="0.7"/>
+          <path d="M55 205 L85 200" stroke="#1a3010" stroke-width="1" opacity="0.5"/>
+          <path d="M420 180 Q445 160 470 175 Q465 200 445 205 Q425 200 420 180" fill="#2d4a1f" opacity="0.7"/>
+          <path d="M425 185 L460 180" stroke="#1a3010" stroke-width="1" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-hint">
+      <span>seguir bajando</span>
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- =========================================
+       MARQUEE
+       ========================================= -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span><em>Loroco</em> · Queso con loroco · Frijol con queso · Ayote · Chicharrón · <em>Revueltas</em> · Pollo · Espinaca · Ajonjolí · Mora · </span>
+      <span><em>Loroco</em> · Queso con loroco · Frijol con queso · Ayote · Chicharrón · <em>Revueltas</em> · Pollo · Espinaca · Ajonjolí · Mora · </span>
+    </div>
+  </div>
+
+  <!-- =========================================
+       NOSOTROS (Sección 3)
+       ========================================= -->
+  <section id="nosotros">
+    <div class="section-inner">
+      <div class="section-label reveal">
+        <span class="num">01 / </span>nuestra historia
+      </div>
+
+      <h2 class="section-title reveal">
+        Diez años,<br>
+        un solo <em>comal</em>.
+      </h2>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="lead">
+            Empezamos en el patio de la abuela <strong>María Esperanza</strong> en 2014, con tres mesas, una plancha de barro y la receta de masa que ella heredó de su madre en Apopa.
+          </p>
+          <p>
+            Hoy seguimos haciendo nuestra masa desde cero — nixtamalizada con cal viva la noche anterior, molida en piedra de río, amasada a mano. La leña viene de fincas de café del Bálsamo. El loroco lo cosechan tres familias de Sonsonate. El queso lo cura un señor en Chalatenango que firma cada bola.
+          </p>
+          <blockquote class="about-quote">
+            "La pupusa no se inventa. Se hereda."
+            <cite>— María Esperanza, fundadora</cite>
+          </blockquote>
+          <p>
+            No tenemos delivery propio. No abrimos los lunes. No servimos pupusas hechas el día anterior. Si llegás un viernes a las 8 de la noche y no hay mesa, no hay mesa — pero te dejamos esperando con una taza de atol shuco mientras tanto.
+          </p>
+        </div>
+
+        <div class="stats-grid reveal-stagger">
+          <div class="stat">
+            <div class="stat-num"><span class="counter" data-target="11">0</span></div>
+            <div class="stat-label">Años<br>cocinando</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num"><span class="counter" data-target="18">0</span></div>
+            <div class="stat-label">Ingredientes<br>locales</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num"><span class="counter" data-target="12">0</span></div>
+            <div class="stat-label">Tipos de<br>pupusa</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">100<span class="unit">%</span></div>
+            <div class="stat-label">Masa<br>nixtamalizada</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       MENÚ / SERVICIOS (Sección 4)
+       ========================================= -->
+  <section id="menu">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <div class="section-label reveal">
+            <span class="num">02 / </span>experiencias
+          </div>
+          <h2 class="section-title reveal">
+            Lo que <em>hacemos</em><br>
+            con la masa.
+          </h2>
+        </div>
+        <p class="section-intro reveal">
+          Más allá de la pupusa de loroco — abrimos la cocina al público, ofrecemos cenas degustación de siete tiempos, hacemos catering y enseñamos a hacer la masa correctamente.
+        </p>
+      </div>
+
+      <div class="services-grid reveal-stagger">
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-tag">tradicional</span>
+            <span class="service-price">desde $1.25</span>
+          </div>
+          <svg class="service-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.4">
+            <ellipse cx="28" cy="34" rx="20" ry="6"/>
+            <ellipse cx="28" cy="32" rx="20" ry="6" fill="currentColor" opacity="0.1"/>
+            <path d="M14 34 Q14 38 18 38 L38 38 Q42 38 42 34"/>
+          </svg>
+          <h3 class="service-name">Pupusas tradicionales</h3>
+          <p class="service-desc">
+            Doce variedades hechas al momento: queso con loroco, revuelta, ayote, chicharrón, frijol con queso, mora, espinaca, ajonjolí, pollo, queso fresco, queso con frijol, y la del día.
+          </p>
+          <div class="service-foot">
+            <span>servidas con curtido y salsa</span>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-tag">degustación</span>
+            <span class="service-price">$45 / persona</span>
+          </div>
+          <svg class="service-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.4">
+            <circle cx="28" cy="28" r="20"/>
+            <path d="M16 28 H40 M28 16 V40 M19.5 19.5 L36.5 36.5 M36.5 19.5 L19.5 36.5" opacity="0.4"/>
+          </svg>
+          <h3 class="service-name">Cena degustación</h3>
+          <p class="service-desc">
+            Siete tiempos de cocina salvadoreña reinterpretada. Empieza con sopa de pata, termina con quesadilla salvadoreña al horno. Solo viernes y sábado, dos turnos.
+          </p>
+          <div class="service-foot">
+            <span>maridaje con tiste y horchata opcional</span>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-tag">tour</span>
+            <span class="service-price">$80 / persona</span>
+          </div>
+          <svg class="service-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M28 8 C18 8 12 16 12 26 C12 40 28 50 28 50 C28 50 44 40 44 26 C44 16 38 8 28 8 Z"/>
+            <circle cx="28" cy="24" r="5"/>
+          </svg>
+          <h3 class="service-name">Tour gastronómico</h3>
+          <p class="service-desc">
+            Visita guiada a tres productores: la milpa de maíz en Apopa, el cafetal en El Bálsamo, y la quesera artesanal en Chalatenango. Termina con almuerzo en COMAL.
+          </p>
+          <div class="service-foot">
+            <span>transporte incluido · 8 horas</span>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-tag">taller</span>
+            <span class="service-price">$25 / persona</span>
+          </div>
+          <svg class="service-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M14 30 Q14 22 22 22 L34 22 Q42 22 42 30 L42 38 L14 38 Z"/>
+            <path d="M22 22 V14 M34 22 V14"/>
+            <circle cx="22" cy="12" r="2"/>
+            <circle cx="34" cy="12" r="2"/>
+          </svg>
+          <h3 class="service-name">Clases de cocina</h3>
+          <p class="service-desc">
+            Aprende a nixtamalizar el maíz, moler la masa en piedra y armar la pupusa correctamente. Grupos de máximo 8 personas, sábados a las 10 AM. Te llevas tu masa para casa.
+          </p>
+          <div class="service-foot">
+            <span>3 horas · cupo limitado</span>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-tag">eventos</span>
+            <span class="service-price">cotizar</span>
+          </div>
+          <svg class="service-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M14 18 H42 V44 H14 Z"/>
+            <path d="M14 18 L28 8 L42 18"/>
+            <path d="M22 44 V32 H34 V44"/>
+          </svg>
+          <h3 class="service-name">Catering &amp; eventos</h3>
+          <p class="service-desc">
+            Bodas, cumpleaños, eventos corporativos. Llevamos comal y leña al lugar — la pupusa se hace frente al invitado. Mínimo 30 personas.
+          </p>
+          <div class="service-foot">
+            <span>todo el país · agendar con 30 días</span>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service-head">
+            <span class="service-tag">para llevar</span>
+            <span class="service-price">desde $1.25</span>
+          </div>
+          <svg class="service-icon" viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M14 22 L42 22 L40 44 L16 44 Z"/>
+            <path d="M20 22 V18 Q20 14 28 14 Q36 14 36 18 V22"/>
+            <path d="M22 30 H34 M22 36 H30"/>
+          </svg>
+          <h3 class="service-name">Pupusas para llevar</h3>
+          <p class="service-desc">
+            Pasá por la ventanilla de la calle. Te las hacemos al momento, las envolvemos en hoja de huerta y te damos curtido aparte. No hay delivery — el comal no espera.
+          </p>
+          <div class="service-foot">
+            <span>ventanilla 6:30 PM — 10:00 PM</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       FORMULARIO (Sección 5)
+       ========================================= -->
+  <section id="reservar">
+    <div class="section-inner">
+
+      <div class="form-wrap">
+        <aside class="form-side reveal">
+          <div class="section-label">
+            <span class="num">03 / </span>reserva tu mesa
+          </div>
+          <h2 class="form-title">
+            Te guardamos<br>
+            un lugar al lado<br>
+            del <em>fuego</em>.
+          </h2>
+          <p>
+            Reservamos hasta con 60 días de anticipación. Para grupos de más de 8 personas, escribinos directo a reservas@comal.sv. Confirmamos cada reserva por WhatsApp en menos de 4 horas.
+          </p>
+
+          <div class="info-list">
+            <div class="info-row">
+              <span>Horario</span>
+              <span>Mar – Dom · 12:00 — 22:00</span>
+            </div>
+            <div class="info-row">
+              <span>Dirección</span>
+              <span>Col. Escalón, San Salvador</span>
+            </div>
+            <div class="info-row">
+              <span>Teléfono</span>
+              <span>+503 2222-3344</span>
+            </div>
+            <div class="info-row">
+              <span>WhatsApp</span>
+              <span>+503 7000-1122</span>
+            </div>
+            <div class="info-row">
+              <span>Capacidad</span>
+              <span>40 comensales</span>
+            </div>
+          </div>
+        </aside>
+
+        <div class="form-card reveal">
+          <div class="form-card-head">
+            <span class="form-num">N° <span id="ticketPreview">—</span></span>
+            <span>solicitud de reserva</span>
+          </div>
+
+          <form id="form" novalidate>
+            <div class="field-row">
+              <div class="field" data-field="nombre">
+                <label>Nombre completo<span class="req">*</span></label>
+                <input type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" />
+                <span class="field-msg"></span>
+              </div>
+              <div class="field" data-field="email">
+                <label>Correo<span class="req">*</span></label>
+                <input type="email" name="email" placeholder="tu@correo.com" autocomplete="email" />
+                <span class="field-msg"></span>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field" data-field="telefono">
+                <label>Teléfono<span class="req">*</span></label>
+                <input type="tel" name="telefono" placeholder="+503 0000-0000" autocomplete="tel" />
+                <span class="field-msg"></span>
+              </div>
+              <div class="field" data-field="personas">
+                <label>Personas<span class="req">*</span></label>
+                <select name="personas">
+                  <option value="">— elegir —</option>
+                  <option value="1">1 persona</option>
+                  <option value="2">2 personas</option>
+                  <option value="3">3 personas</option>
+                  <option value="4">4 personas</option>
+                  <option value="5">5 personas</option>
+                  <option value="6">6 personas</option>
+                  <option value="7">7 personas</option>
+                  <option value="8">8 personas</option>
+                </select>
+                <span class="field-msg"></span>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field" data-field="fecha">
+                <label>Fecha<span class="req">*</span></label>
+                <input type="date" name="fecha" />
+                <span class="field-msg"></span>
+              </div>
+              <div class="field" data-field="hora">
+                <label>Hora<span class="req">*</span></label>
+                <select name="hora">
+                  <option value="">— elegir —</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="12:30">12:30 PM</option>
+                  <option value="13:00">1:00 PM</option>
+                  <option value="13:30">1:30 PM</option>
+                  <option value="14:00">2:00 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="18:30">6:30 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                  <option value="19:30">7:30 PM</option>
+                  <option value="20:00">8:00 PM</option>
+                  <option value="20:30">8:30 PM</option>
+                  <option value="21:00">9:00 PM</option>
+                </select>
+                <span class="field-msg"></span>
+              </div>
+            </div>
+
+            <div class="field" data-field="experiencia">
+              <label>Experiencia<span class="req">*</span></label>
+              <select name="experiencia">
+                <option value="">— elegir —</option>
+                <option value="cena-regular">Cena regular</option>
+                <option value="degustacion">Cena degustación (7 tiempos)</option>
+                <option value="cumpleanos">Cumpleaños</option>
+                <option value="aniversario">Aniversario</option>
+                <option value="negocios">Cena de negocios</option>
+                <option value="clase">Clase de cocina</option>
+                <option value="tour">Tour gastronómico</option>
+              </select>
+              <span class="field-msg"></span>
+            </div>
+
+            <div class="field" data-field="mensaje">
+              <label>
+                Notas o restricciones alimentarias
+                <span class="field-counter"><span id="charCount">0</span> / 300</span>
+              </label>
+              <textarea name="mensaje" placeholder="Alergias, preferencias vegetarianas, ocasión especial, mesa cerca de ventana, etc." maxlength="300"></textarea>
+              <span class="field-msg"></span>
+            </div>
+
+            <label class="checkbox-field" data-field="terminos">
+              <input type="checkbox" name="terminos" />
+              <span class="check-box"></span>
+              <span>Acepto la <a href="#">política de cancelación</a>: las reservas se mantienen 15 minutos después de la hora reservada.</span>
+            </label>
+
+            <button type="submit" class="form-submit" id="submitBtn">
+              <span class="btn-text">Enviar solicitud</span>
+              <span class="arrow">→</span>
+            </button>
+
+            <div class="form-status" id="formStatus"></div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================
+       FOOTER (Sección 6)
+       ========================================= -->
+  <footer>
+    <div class="footer-mega">
+      C O M A L
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="#hero" class="nav-logo">
+          <svg class="logo-mark" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="16" cy="16" r="7" fill="currentColor"/>
+          </svg>
+          <span>COMAL</span>
+        </a>
+        <p>
+          Pupusería contemporánea con masa nixtamalizada en casa, comal de barro y leña de café.
+        </p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.78a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.84-.21z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l.6.954-1 3.648 3.748-.984.001.001zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Visitanos</h4>
+        <ul>
+          <li>87 Av. Norte, Col. Escalón</li>
+          <li>San Salvador, El Salvador</li>
+          <li>+503 2222-3344</li>
+          <li><a href="mailto:hola@comal.sv">hola@comal.sv</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Horario</h4>
+        <ul>
+          <li>Lunes — cerrado</li>
+          <li>Mar — Jue · 12:00 — 21:00</li>
+          <li>Vie — Sáb · 12:00 — 22:00</li>
+          <li>Dom · 12:00 — 20:00</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#menu">Menú</a></li>
+          <li><a href="#reservar">Reservar</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> COMAL Pupusería · todos los derechos reservados</span>
+      <span class="made">desarrollado por <span>Javier Arturo García Mineros</span>, estudiante de KODIGO</span>
+      <span>cocinado con leña en San Salvador</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
